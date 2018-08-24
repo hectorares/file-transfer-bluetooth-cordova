@@ -5,15 +5,15 @@ Install: cordova plugin add https://github.com/hectorares/file-transfer-bluetoot
 
 # Example
 declare var cordova: any;
-
+~~~
 var yourPath = '/storage/emulated/0/Download/data.txt';
 cordova.plugins.BluetoothFileTransfer.sendFile(this.yourPath, success, failure);
- var success = function(result) {
-  alert(JSON.stringify(result, undefined, 2));
- }
- var failure = function(result) {
-  alert(JSON.stringify(result, undefined, 2));
- }
+var success = function(result) {
+ alert(JSON.stringify(result, undefined, 2));
+}
+var failure = function(result) {
+ alert(JSON.stringify(result, undefined, 2));
+}
 
 
 
