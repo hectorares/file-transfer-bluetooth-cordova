@@ -1,0 +1,17 @@
+{
+  "name": "btFileTransferIndigo",
+  "version": "0.0.1",
+  "description": "Bluetooth File transfer android native for sync indigo ",
+  "cordova": {
+    "id": "btFileTransferIndigo",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Hector arroyo",
+  "license": "ISC"
+}
