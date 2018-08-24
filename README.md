@@ -1,1 +1,1 @@
-# file-transfer-bluetooth-cordova
+# cordova plugin file transfer bluetooth android
