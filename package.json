@@ -8,6 +8,10 @@
       "android"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hectorares/file-transfer-bluetooth-cordova.git"
+  },
   "keywords": [
     "ecosystem:cordova",
     "cordova-android"
