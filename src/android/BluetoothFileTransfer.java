@@ -98,7 +98,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
             } else {
                 i.setClassName(packageName, className);
                 cordova.getActivity().startActivity(i);
-                callbackContextBt.success("successfully");
+                callbackContextBt.success("success");
             }
         }
     } else {
