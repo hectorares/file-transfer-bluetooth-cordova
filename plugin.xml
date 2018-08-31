@@ -9,10 +9,20 @@
 <param name="android-package" value="btFileTransferIndigo.BluetoothFileTransfer" />
 </feature>
 </config-file>
+<source-file src="src/android/res/xml/opener_paths.xml" target-dir="res/xml" />
+<source-file src="src/android/BluetoothFileTransfer.java" target-dir="src/btFileTransferIndigo/BluetoothFileTransfer" />
+<source-file src="src/android/FileProvider.java" target-dir="src/btFileTransferIndigo/BluetoothFileTransfer" />
 <config-file parent="/*" target="AndroidManifest.xml">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 </config-file>
-<source-file src="src/android/BluetoothFileTransfer.java" target-dir="src/btFileTransferIndigo/BluetoothFileTransfer" />
+<config-file target="AndroidManifest.xml" parent="/manifest/application">
+<provider android:name="btFileTransferIndigo.FileProvider" android:authorities="${applicationId}.opener.provider" android:exported="false" android:grantUriPermissions="true">
+<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/opener_paths" />
+</provider>
+</config-file>
+
 </platform>
 </plugin>

@@ -2,6 +2,7 @@ package btFileTransferIndigo;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+import android.content.Context;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,7 +16,7 @@ import android.widget.Toast;
 import android.util.Log;
 import java.io.File;
 import java.util.List;
-
+import btFileTransferIndigo.FileProvider;
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -72,8 +73,8 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
         i.setAction(Intent.ACTION_SEND);
         i.setType("*/*");
         File file = new File(path);
-
-        i.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+        Context context = cordova.getActivity().getApplicationContext();
+        i.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(context, cordova.getActivity().getPackageName() + ".opener.provider", file));
 
         PackageManager pm = cordova.getActivity().getPackageManager();
         List<ResolveInfo> list = pm.queryIntentActivities(i, 0);
